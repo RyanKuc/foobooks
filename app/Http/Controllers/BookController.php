@@ -3,6 +3,7 @@
 namespace Foobooks\Http\Controllers;
 
 use Foobooks\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class BookController extends Controller {
 
@@ -34,7 +35,8 @@ public function getShow($title = null) {
     /**
      * Responds to requests to POST /books/create
      */
-    public function postCreate() {
-        return 'Process adding new book '.$_POST['title'];
+    public function postCreate(Request $request) {
+        $title=$request->input('title');
+        return 'Process adding new book: '.$title;
     }
 }

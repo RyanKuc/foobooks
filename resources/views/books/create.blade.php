@@ -15,10 +15,15 @@ such as a page specific styesheets.
 
 @section('content')
 <form method="POST" action="/books/create">
-<input type='hidden' value='{{ csrf_token() }}' name='_token'>
-<input type="text" name="title">
-<input type="submit">
-</form>
+        <input type='hidden' value='{{ csrf_token() }}' name='_token'>
+        <fieldset>
+            <label for='title'>Title:</label>
+            <input type="text" id='title' name="title">
+        </fieldset>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Add book</button>
+  </form>
 
 
 @stop
